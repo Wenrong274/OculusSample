@@ -13,9 +13,8 @@ namespace hyhy.Oculus
         public EventBool OffPressEvent;
         public EventFloat PressHandleEvent;
 
-        [SerializeField] private Transform beltEnd;
         private bool isGrabber;
-        [SerializeField] private Transform rootBelt;
+        [SerializeField] private Transform handRoot;
         private float BeltValue = 0;
 
         Vector3 initPos;
@@ -46,7 +45,7 @@ namespace hyhy.Oculus
             }
             else
             {
-                transform.SetParent(rootBelt);
+                transform.SetParent(handRoot);
                 transform.localPosition = Vector3.zero;
                 OffPressEvent.Invoke(BeltValue >= 0.95f);
             }
